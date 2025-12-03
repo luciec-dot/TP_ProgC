@@ -5,6 +5,7 @@ int main() {
 
     int num1, num2;
     char op;
+    int resultat = 0;
 
     printf("Entrez num1 : ");
     scanf("%d", &num1);
@@ -13,11 +14,9 @@ int main() {
     scanf("%d", &num2);
 
     printf("Entrez l'operateur (+, -, *, /, %%, &, |, ~) : ");
-    scanf(" %c", &op);
+    scanf(" %c", &op);   // espace avant %c pour consommer le \n éventuel
 
-    int resultat = 0;
-
-    switch(op) {
+    switch (op) {
         case '+':
             resultat = somme(num1, num2);
             break;
@@ -44,7 +43,7 @@ int main() {
             break;
         default:
             printf("Operateur inconnu.\n");
-            return 0;
+            return 1;
     }
 
     printf("Resultat : %d\n", resultat);
